@@ -9,7 +9,7 @@ w, h_freq = sig.freqz(b, fs=fs)
 z, p, k = sig.tf2zpk(b, 1)
 plt.figure(1)
 plt.subplot(3, 1, 1)
-plt.plot(w, np.abs(h_freq)) # magnitude
+plt.plot(w, np.abs(h_freq),color='r') # magnitude
 plt.xlabel('frequency(Hz)')
 plt.ylabel('Magnitude')
 plt.figure(2)
@@ -17,7 +17,7 @@ plt.plot(w, np.unwrap(np.angle(h_freq))) # phase
 plt.xlabel('frequency(Hz)')
 plt.ylabel('Phase(angel)')
 plt.figure(3)
-plt.scatter(np.real(z), np.imag(z), marker='o', edgecolors='g')
+plt.scatter(np.real(z), np.imag(z), marker='o', edgecolors='r')
 plt.scatter(np.real(p), np.imag(p), marker='x', color='b')
 plt.title('Pole-zeros plot')
 plt.xlabel('Real part')
